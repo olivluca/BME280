@@ -95,8 +95,6 @@ class BME280:
         self.dig_H4 = (self.dig_H4 * 16) + (self.dig_H5 & 0xF)
         self.dig_H5 //= 16
 
-        self.i2c.writeto_mem(self.address, BME280_REGISTER_CONTROL,
-                             bytearray([0x3F]))
         self.t_fine = 0
 
         # temporary data holders which stay allocated
